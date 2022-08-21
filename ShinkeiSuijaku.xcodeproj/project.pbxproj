@@ -11,7 +11,6 @@
 		8F165F4328AE352E00BC090E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F165F4228AE352E00BC090E /* ContentView.swift */; };
 		8F165F4528AE353000BC090E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F165F4428AE353000BC090E /* Assets.xcassets */; };
 		8F165F4828AE353000BC090E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F165F4728AE353000BC090E /* Preview Assets.xcassets */; };
-		8F165F4A28AE353000BC090E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F165F4928AE353000BC090E /* Persistence.swift */; };
 		8F165F4D28AE353000BC090E /* ShinkeiSuijaku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F165F4B28AE353000BC090E /* ShinkeiSuijaku.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -21,7 +20,6 @@
 		8F165F4228AE352E00BC090E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8F165F4428AE353000BC090E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F165F4728AE353000BC090E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8F165F4928AE353000BC090E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		8F165F4C28AE353000BC090E /* ShinkeiSuijaku.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShinkeiSuijaku.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +56,6 @@
 				8F165F4028AE352E00BC090E /* ShinkeiSuijakuApp.swift */,
 				8F165F4228AE352E00BC090E /* ContentView.swift */,
 				8F165F4428AE353000BC090E /* Assets.xcassets */,
-				8F165F4928AE353000BC090E /* Persistence.swift */,
 				8F165F4B28AE353000BC090E /* ShinkeiSuijaku.xcdatamodeld */,
 				8F165F4628AE353000BC090E /* Preview Content */,
 			);
@@ -143,7 +140,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F165F4A28AE353000BC090E /* Persistence.swift in Sources */,
 				8F165F4328AE352E00BC090E /* ContentView.swift in Sources */,
 				8F165F4D28AE353000BC090E /* ShinkeiSuijaku.xcdatamodeld in Sources */,
 				8F165F4128AE352E00BC090E /* ShinkeiSuijakuApp.swift in Sources */,
