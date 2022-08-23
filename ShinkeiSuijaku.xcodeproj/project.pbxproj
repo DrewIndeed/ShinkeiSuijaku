@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8F165F4128AE352E00BC090E /* ShinkeiSuijakuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F165F4028AE352E00BC090E /* ShinkeiSuijakuApp.swift */; };
-		8F165F4328AE352E00BC090E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F165F4228AE352E00BC090E /* ContentView.swift */; };
 		8F165F4528AE353000BC090E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F165F4428AE353000BC090E /* Assets.xcassets */; };
 		8F165F4828AE353000BC090E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F165F4728AE353000BC090E /* Preview Assets.xcassets */; };
 		8F165F4D28AE353000BC090E /* ShinkeiSuijaku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F165F4B28AE353000BC090E /* ShinkeiSuijaku.xcdatamodeld */; };
@@ -19,12 +18,16 @@
 		8F235CF828B2718200B00393 /* ingame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F235CF228B2718100B00393 /* ingame.mp3 */; };
 		8F235CF928B2718200B00393 /* opening.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F235CF328B2718100B00393 /* opening.mp3 */; };
 		8F235CFA28B2718200B00393 /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F235CF428B2718200B00393 /* win.mp3 */; };
+		8F235CFF28B4D70300B00393 /* MenuScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235CFE28B4D70300B00393 /* MenuScreenView.swift */; };
+		8F235D0128B4D71E00B00393 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235D0028B4D71E00B00393 /* State.swift */; };
+		8F235D0428B4D74600B00393 /* GameStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235D0328B4D74600B00393 /* GameStateModel.swift */; };
+		8F235D0628B4D79000B00393 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235D0528B4D79000B00393 /* Store.swift */; };
+		8F235D0828B4D9EF00B00393 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235D0728B4D9EF00B00393 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8F165F3D28AE352E00BC090E /* ShinkeiSuijaku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShinkeiSuijaku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F165F4028AE352E00BC090E /* ShinkeiSuijakuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShinkeiSuijakuApp.swift; sourceTree = "<group>"; };
-		8F165F4228AE352E00BC090E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8F165F4428AE353000BC090E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F165F4728AE353000BC090E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8F165F4C28AE353000BC090E /* ShinkeiSuijaku.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShinkeiSuijaku.xcdatamodel; sourceTree = "<group>"; };
@@ -35,6 +38,11 @@
 		8F235CF228B2718100B00393 /* ingame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ingame.mp3; sourceTree = "<group>"; };
 		8F235CF328B2718100B00393 /* opening.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = opening.mp3; sourceTree = "<group>"; };
 		8F235CF428B2718200B00393 /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
+		8F235CFE28B4D70300B00393 /* MenuScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenView.swift; sourceTree = "<group>"; };
+		8F235D0028B4D71E00B00393 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		8F235D0328B4D74600B00393 /* GameStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateModel.swift; sourceTree = "<group>"; };
+		8F235D0528B4D79000B00393 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		8F235D0728B4D9EF00B00393 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +75,12 @@
 		8F165F3F28AE352E00BC090E /* ShinkeiSuijaku */ = {
 			isa = PBXGroup;
 			children = (
+				8F235CFD28B4D6CC00B00393 /* Redux */,
+				8F235CFC28B4D6C500B00393 /* Models */,
+				8F235CFB28B4D6BE00B00393 /* Views */,
 				8F235CEE28B2716A00B00393 /* Sounds */,
 				8F165F4028AE352E00BC090E /* ShinkeiSuijakuApp.swift */,
-				8F165F4228AE352E00BC090E /* ContentView.swift */,
+				8F235D0728B4D9EF00B00393 /* ContentView.swift */,
 				8F165F4428AE353000BC090E /* Assets.xcassets */,
 				8F165F4B28AE353000BC090E /* ShinkeiSuijaku.xcdatamodeld */,
 				8F165F4628AE353000BC090E /* Preview Content */,
@@ -97,6 +108,31 @@
 				8F235CEC28B2716200B00393 /* flip.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		8F235CFB28B4D6BE00B00393 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8F235CFE28B4D70300B00393 /* MenuScreenView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8F235CFC28B4D6C500B00393 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8F235D0328B4D74600B00393 /* GameStateModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8F235CFD28B4D6CC00B00393 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				8F235D0028B4D71E00B00393 /* State.swift */,
+				8F235D0528B4D79000B00393 /* Store.swift */,
+			);
+			path = Redux;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,9 +212,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F165F4328AE352E00BC090E /* ContentView.swift in Sources */,
+				8F235D0628B4D79000B00393 /* Store.swift in Sources */,
 				8F165F4D28AE353000BC090E /* ShinkeiSuijaku.xcdatamodeld in Sources */,
+				8F235D0828B4D9EF00B00393 /* ContentView.swift in Sources */,
 				8F165F4128AE352E00BC090E /* ShinkeiSuijakuApp.swift in Sources */,
+				8F235D0128B4D71E00B00393 /* State.swift in Sources */,
+				8F235CFF28B4D70300B00393 /* MenuScreenView.swift in Sources */,
+				8F235D0428B4D74600B00393 /* GameStateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

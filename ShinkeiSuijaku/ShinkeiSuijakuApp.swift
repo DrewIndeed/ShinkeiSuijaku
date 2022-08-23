@@ -11,7 +11,11 @@ import SwiftUI
 struct ShinkeiSuijakuApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(
+                ShinkeiSuijakuStore(
+                    initialState: ShinkeiSuijakuState()
+                )
+            )
         }
     }
 }
