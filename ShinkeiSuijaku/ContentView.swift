@@ -16,10 +16,18 @@ struct ContentView: View {
            switch store.state.gameState {
            case .isTitle:
                TitleScreenView()
+           case .isMenu:
+               MenuScreenView()
+           case .isLeaderBoard:
+               Text("In Leaderboard")
+           case .isHowToPlay:
+               Text("In How To Play")
            case .isGame:
                Text("In Game")
            case .isWon:
                Text("Won Game")
+           case .isLost:
+               Text("Lost Game")
            }
        }
 }

@@ -99,6 +99,7 @@ struct TitleScreenView: View {
                         }, label:  {
                             Text("Start Game")
                                 .bold()
+                                .frame(width: 180)
                         })
                         .buttonStyle(RoundedRectangleButtonStyle())
                     }

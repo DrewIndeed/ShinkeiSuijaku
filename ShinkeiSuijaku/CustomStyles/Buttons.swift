@@ -17,3 +17,14 @@ struct RoundedRectangleButtonStyle: ButtonStyle {
         .scaleEffect(configuration.isPressed ? 0.9 : 1)
     }
 }
+
+struct RoundedRectangleSecondaryButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack {
+            configuration.label.foregroundColor(.black)
+        }
+        .padding()
+        .background(Color.white.cornerRadius(30))
+        .scaleEffect(configuration.isPressed ? 0.9 : 1)
+    }
+}
