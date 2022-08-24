@@ -14,8 +14,8 @@ struct ContentView: View {
     // render screens depending on game (Redux) state
        var body: some View {
            switch store.state.gameState {
-           case .isMenu:
-               MenuScreenView()
+           case .isTitle:
+               TitleScreenView()
            case .isGame:
                Text("In Game")
            case .isWon:

@@ -8,5 +8,5 @@
 import Foundation
 
 enum GameState {
-  case isMenu, isGame, isWon
+  case isTitle, isGame, isWon
 }
