@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TitleScreenView: View {
+    // (Redux) store to use Redux mechanism
+    @EnvironmentObject var store: ShinkeiSuijakuStore
+    
     @SwiftUI.State private var nameInput: String = ""
     
     var body: some View {
@@ -96,6 +99,8 @@ struct TitleScreenView: View {
                         // Start Game button
                         Button(action: {
                             // button tapped action
+                            // dispatch action for Start Game -> to Menu
+                            store.dispatchToQueueActions(.startGame)
                         }, label:  {
                             Text("Start Game")
                                 .bold()

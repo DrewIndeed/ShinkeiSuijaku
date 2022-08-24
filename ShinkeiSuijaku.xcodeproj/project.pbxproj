@@ -26,6 +26,8 @@
 		8F235D0B28B6013D00B00393 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235D0A28B6013D00B00393 /* Buttons.swift */; };
 		8F235D0D28B6017E00B00393 /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235D0C28B6017E00B00393 /* TextFields.swift */; };
 		8F235D0F28B605A300B00393 /* MenuScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235D0E28B605A300B00393 /* MenuScreenView.swift */; };
+		8F235D1128B60E5D00B00393 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235D1028B60E5D00B00393 /* Reducer.swift */; };
+		8F235D1328B60E7400B00393 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235D1228B60E7400B00393 /* Action.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		8F235D0A28B6013D00B00393 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		8F235D0C28B6017E00B00393 /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
 		8F235D0E28B605A300B00393 /* MenuScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenView.swift; sourceTree = "<group>"; };
+		8F235D1028B60E5D00B00393 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		8F235D1228B60E7400B00393 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 			children = (
 				8F235D0028B4D71E00B00393 /* State.swift */,
 				8F235D0528B4D79000B00393 /* Store.swift */,
+				8F235D1028B60E5D00B00393 /* Reducer.swift */,
+				8F235D1228B60E7400B00393 /* Action.swift */,
 			);
 			path = Redux;
 			sourceTree = "<group>";
@@ -230,8 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F235D0628B4D79000B00393 /* Store.swift in Sources */,
+				8F235D1328B60E7400B00393 /* Action.swift in Sources */,
 				8F165F4D28AE353000BC090E /* ShinkeiSuijaku.xcdatamodeld in Sources */,
 				8F235D0D28B6017E00B00393 /* TextFields.swift in Sources */,
+				8F235D1128B60E5D00B00393 /* Reducer.swift in Sources */,
 				8F235D0F28B605A300B00393 /* MenuScreenView.swift in Sources */,
 				8F235D0828B4D9EF00B00393 /* ContentView.swift in Sources */,
 				8F165F4128AE352E00BC090E /* ShinkeiSuijakuApp.swift in Sources */,

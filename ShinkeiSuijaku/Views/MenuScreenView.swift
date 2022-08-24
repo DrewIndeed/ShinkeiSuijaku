@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MenuScreenView: View {
+    // (Redux) store to use Redux mechanism
+    @EnvironmentObject var store: ShinkeiSuijakuStore
+    
     @SwiftUI.State var playerNickname = "moscow elite thunderbolt"
     
     var body: some View {
@@ -91,6 +94,8 @@ struct MenuScreenView: View {
                             // New Game button
                             Button(action: {
                                 // button tapped action
+                                // dispatch action for New Game -> to Game
+                                store.dispatchToQueueActions(.newGame)
                             }, label:  {
                                 Text("New Game")
                                     .bold()
@@ -101,6 +106,8 @@ struct MenuScreenView: View {
                             // Leaderboard button
                             Button(action: {
                                 // button tapped action
+                                // dispatch action for Leaderboard -> to leaderboard
+                                store.dispatchToQueueActions(.leaderboard)
                             }, label:  {
                                 Text("Leaderboard")
                                     .bold()
@@ -112,6 +119,8 @@ struct MenuScreenView: View {
                             // Start Game button
                             Button(action: {
                                 // button tapped action
+                                // dispatch action for How To Play -> to how to play
+                                store.dispatchToQueueActions(.howToPlay)
                             }, label:  {
                                 Text("How To Play")
                                     .bold()
@@ -122,6 +131,8 @@ struct MenuScreenView: View {
                             // Log Out button
                             Button(action: {
                                 // button tapped action
+                                // dispatch action for log out -> to title
+                                store.dispatchToQueueActions(.logOut)
                             }, label:  {
                                 Text("Log Out")
                                     .bold()

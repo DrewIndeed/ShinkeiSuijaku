@@ -10,5 +10,5 @@ import Foundation
 struct State {}
 
 struct ShinkeiSuijakuState {
-    var gameState: GameState = .isMenu
+    var gameState: GameState = .isTitle
 }

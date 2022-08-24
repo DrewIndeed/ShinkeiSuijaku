@@ -13,7 +13,8 @@ struct ShinkeiSuijakuApp: App {
         WindowGroup {
             ContentView().environmentObject(
                 ShinkeiSuijakuStore(
-                    initialState: ShinkeiSuijakuState()
+                    initialState: ShinkeiSuijakuState(),
+                    initialReducer: shinkeiSuijakuReducer
                 )
             )
         }
