@@ -102,6 +102,7 @@ struct MenuScreenView: View {
                                     .frame(width: 180)
                             })
                             .buttonStyle(RoundedRectangleButtonStyle())
+                            .transition(.move(edge: .leading))
                             
                             // Leaderboard button
                             Button(action: {
@@ -114,31 +115,38 @@ struct MenuScreenView: View {
                                     .frame(width: 180)
                             })
                             .buttonStyle(RoundedRectangleButtonStyle())
+                            .transition(.move(edge: .leading))
                             
                             
-                            // Start Game button
+                            // How To Play button
                             Button(action: {
                                 // button tapped action
                                 // dispatch action for How To Play -> to how to play
-                                store.dispatchToQueueActions(.howToPlay)
+                                withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
+                                    store.dispatchToQueueActions(.howToPlay)
+                                }
                             }, label:  {
                                 Text("How To Play")
                                     .bold()
                                     .frame(width: 180)
                             })
                             .buttonStyle(RoundedRectangleButtonStyle())
+                            .transition(.move(edge: .leading))
                             
                             // Log Out button
                             Button(action: {
                                 // button tapped action
                                 // dispatch action for log out -> to title
-                                store.dispatchToQueueActions(.logOut)
+                                withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
+                                    store.dispatchToQueueActions(.logOut)
+                                }
                             }, label:  {
                                 Text("Log Out")
                                     .bold()
                                     .frame(width: 180)
                             })
                             .buttonStyle(RoundedRectangleSecondaryButtonStyle())
+                            .transition(.move(edge: .leading))
                         }
                         .padding(.top, 30)
                     }

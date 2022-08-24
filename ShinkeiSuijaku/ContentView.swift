@@ -21,7 +21,7 @@ struct ContentView: View {
            case .isLeaderBoard:
                Text("In Leaderboard")
            case .isHowToPlay:
-               Text("In How To Play")
+               HowToPlayScreenView()
            case .isGame:
                Text("In Game")
            case .isWon:
@@ -33,11 +33,13 @@ struct ContentView: View {
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(
-            ShinkeiSuijakuStore(
-                initialState: ShinkeiSuijakuState(),
-                initialReducer: shinkeiSuijakuReducer
+        VStack {
+            ContentView().environmentObject(
+                ShinkeiSuijakuStore(
+                    initialState: ShinkeiSuijakuState(),
+                    initialReducer: shinkeiSuijakuReducer
+                )
             )
-        )
+        }
     }
 }
