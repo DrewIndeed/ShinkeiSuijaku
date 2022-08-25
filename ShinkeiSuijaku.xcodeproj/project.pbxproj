@@ -15,6 +15,7 @@
 		8F12C3BD28B735D3004FBC8B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3BC28B735D3004FBC8B /* CardView.swift */; };
 		8F12C3BF28B75321004FBC8B /* CardGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3BE28B75321004FBC8B /* CardGridView.swift */; };
 		8F12C3C128B766F1004FBC8B /* GameScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3C028B766F1004FBC8B /* GameScreenView.swift */; };
+		8F12C3C328B7BBF0004FBC8B /* DifficultyLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3C228B7BBF0004FBC8B /* DifficultyLevelModel.swift */; };
 		8F165F4128AE352E00BC090E /* ShinkeiSuijakuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F165F4028AE352E00BC090E /* ShinkeiSuijakuApp.swift */; };
 		8F165F4528AE353000BC090E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F165F4428AE353000BC090E /* Assets.xcassets */; };
 		8F165F4828AE353000BC090E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F165F4728AE353000BC090E /* Preview Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		8F12C3BC28B735D3004FBC8B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8F12C3BE28B75321004FBC8B /* CardGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGridView.swift; sourceTree = "<group>"; };
 		8F12C3C028B766F1004FBC8B /* GameScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenView.swift; sourceTree = "<group>"; };
+		8F12C3C228B7BBF0004FBC8B /* DifficultyLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevelModel.swift; sourceTree = "<group>"; };
 		8F165F3D28AE352E00BC090E /* ShinkeiSuijaku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShinkeiSuijaku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F165F4028AE352E00BC090E /* ShinkeiSuijakuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShinkeiSuijakuApp.swift; sourceTree = "<group>"; };
 		8F165F4428AE353000BC090E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				8F235D0328B4D74600B00393 /* GameStateModel.swift */,
 				8F12C3B328B72D47004FBC8B /* CardContentModel.swift */,
 				8F12C3B528B7334F004FBC8B /* CardModel.swift */,
+				8F12C3C228B7BBF0004FBC8B /* DifficultyLevelModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				8F12C3BD28B735D3004FBC8B /* CardView.swift in Sources */,
 				8F12C3B428B72D47004FBC8B /* CardContentModel.swift in Sources */,
 				8F12C3AD28B6819C004FBC8B /* AudioPlayer.swift in Sources */,
+				8F12C3C328B7BBF0004FBC8B /* DifficultyLevelModel.swift in Sources */,
 				8F235D0F28B605A300B00393 /* MenuScreenView.swift in Sources */,
 				8F235D0828B4D9EF00B00393 /* ContentView.swift in Sources */,
 				8F235D1528B6143100B00393 /* HowToPlayScreenView.swift in Sources */,

@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum GameState {
+enum GameStateModel {
   case isTitle, isMenu, isHowToPlay, isLeaderBoard, isGame, isWon, isLost
 }

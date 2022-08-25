@@ -11,7 +11,11 @@ struct MenuScreenView: View {
     // (Redux) store to use Redux mechanism
     @EnvironmentObject var store: ShinkeiSuijakuStore
     
-    @SwiftUI.State var playerNickname = "moscow elite thunderbolt"
+    // dummies
+    @SwiftUI.State var playerNickname: String = "moscow elite thunderbolt"
+    
+    // alert showing flag
+    @SwiftUI.State var showLevelAlert: Bool = false
     
     var body: some View {
         ZStack {
@@ -93,10 +97,8 @@ struct MenuScreenView: View {
                         VStack (spacing: 20) {
                             // New Game button
                             Button(action: {
-                                // button tapped action
-                                // dispatch action for New Game -> to Game
-                                withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
-                                    store.dispatchToQueueActions(.newGame)
+                                if (showLevelAlert == false) {
+                                    showLevelAlert.toggle()
                                 }
                                 playSound("tap")
                             }, label:  {
@@ -163,11 +165,39 @@ struct MenuScreenView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea()
+        .alert("Difficulty", isPresented: $showLevelAlert) {
+            DifficultyLevelButton(difficultyLevel: .easy, role: nil)
+            DifficultyLevelButton(difficultyLevel: .medium, role: nil)
+            DifficultyLevelButton(difficultyLevel: .hard, role: .destructive)
+            Button("Cancel", role: .cancel, action: {
+                // button debounce
+                if (showLevelAlert == true) {
+                    showLevelAlert.toggle()
+                    if (showLevelAlert == true) {
+                        showLevelAlert.toggle()
+                    }
+                }
+            })
+        } message: {
+            Text("Choose your level warrior!")
+        }
         .onAppear {
             if audioPlayer.currentTime == 0 {
                 playMusic("opening")
             }
         }
+    }
+    
+    @ViewBuilder
+    func DifficultyLevelButton(difficultyLevel: DifficultyLevelModel, role: ButtonRole?) -> some View {
+        Button(difficultyLevel.rawValue, role: role, action: {
+            // button tapped action
+            // dispatch action for New Game -> to Game
+            withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
+                // redirect
+                store.dispatchToQueueActions(.newGame)
+            }
+        })
     }
 }
 

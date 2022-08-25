@@ -10,8 +10,9 @@ import Foundation
 struct State {}
 
 struct ShinkeiSuijakuState {
-    var gameState: GameState = .isTitle
+    var gameState: GameStateModel = .isTitle
     var cards: [CardModel] = []
     var selectedCards: [CardModel] = []
     var moves: Int = 0
+    var difficultyLevel: DifficultyLevelModel = .hard
 }

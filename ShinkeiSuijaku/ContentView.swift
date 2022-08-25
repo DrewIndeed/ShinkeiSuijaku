@@ -12,24 +12,24 @@ struct ContentView: View {
     @EnvironmentObject var store: ShinkeiSuijakuStore
     
     // render screens depending on game (Redux) state
-       var body: some View {
-           switch store.state.gameState {
-           case .isTitle:
-               TitleScreenView()
-           case .isMenu:
-               MenuScreenView()
-           case .isHowToPlay:
-               HowToPlayScreenView()
-           case .isLeaderBoard:
-               Text("In Leaderboard")
-           case .isGame:
-               GameScreenView()
-           case .isWon:
-               Text("Won Game")
-           case .isLost:
-               Text("Lost Game")
-           }
-       }
+    var body: some View {
+        switch store.state.gameState {
+        case .isTitle:
+            TitleScreenView()
+        case .isMenu:
+            MenuScreenView()
+        case .isHowToPlay:
+            HowToPlayScreenView()
+        case .isLeaderBoard:
+            Text("In Leaderboard")
+        case .isGame:
+            GameScreenView()
+        case .isWon:
+            Text("Won Game")
+        case .isLost:
+            Text("Lost Game")
+        }
+    }
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

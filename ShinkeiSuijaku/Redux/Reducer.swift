@@ -22,31 +22,25 @@ let shinkeiSuijakuReducer: Reducer<ShinkeiSuijakuState, ShinkeiSuijakuAction> = 
         mutatingState.gameState = .isGame
         
         // init the default cards
-        mutatingState.cards = [
-            CardModel(content: .two_of_clubs),
-            CardModel(content: .two_of_clubs),
-            CardModel(content: .three_of_hearts),
-            CardModel(content: .three_of_hearts),
+        // copy state's card array
+        var mutatingCards = mutatingState.cards
+        for _ in 0..<(mutatingState.difficultyLevel.numberOfCards / 2) {
+            // get random element from card content model
+            let randomCardContent = CardContentModel.allCases.randomElement()!
             
-            CardModel(content: .four_of_spades),
-            CardModel(content: .four_of_spades),
-            CardModel(content: .five_of_diamonds),
-            CardModel(content: .five_of_diamonds),
-            
-            CardModel(content: .six_of_clubs),
-            CardModel(content: .six_of_clubs),
-            CardModel(content: .ace_of_hearts),
-            CardModel(content: .ace_of_hearts),
-            
-            CardModel(content: .seven_of_clubs),
-            CardModel(content: .seven_of_clubs),
-            CardModel(content: .black_joker),
-            CardModel(content: .black_joker),
-        ].shuffled()
+            // add 2 same cards
+            mutatingCards.append(CardModel(content: randomCardContent))
+            mutatingCards.append(CardModel(content: randomCardContent))
+        }
+        // update state's initial card array
+        mutatingState.cards = mutatingCards.shuffled()
         
         // reset selected cards and move count
         mutatingState.selectedCards = []
         mutatingState.moves = 0
+    case .giveUp:
+        // LATER ADJUST TO .giveUp
+        mutatingState.gameState = .isMenu
     case .leaderboard:
         mutatingState.gameState = .isLeaderBoard
     case .howToPlay:
