@@ -29,7 +29,7 @@ struct CardView: View {
         // animation
         .rotation3DEffect(
             card.isFlipped ?
-            Angle(degrees: 180)
+            Angle(degrees: 360)
             : Angle(degrees: 0), axis: (x: 0, y: 10, z: 0))
     }
 }
@@ -37,7 +37,7 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView(card: CardModel(content: .ace_of_hearts, isFlipped: false))
-        CardView(card: CardModel(content: .ace_of_hearts, isFlipped: true))
+        CardView(card: CardModel(content: .three_of_hearts, isFlipped: true))
         CardView(card: CardModel(content: .black_joker, isFlipped: true))
     }
 }

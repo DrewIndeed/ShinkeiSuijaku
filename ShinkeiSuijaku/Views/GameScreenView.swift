@@ -10,29 +10,7 @@ import SwiftUI
 struct GameScreenView: View {
     // (Redux) store to use Redux mechanism
     @EnvironmentObject var store: ShinkeiSuijakuStore
-    
-    let cards = [
-        CardModel(content: .two_of_clubs),
-        CardModel(content: .two_of_clubs),
-        CardModel(content: .three_of_hearts),
-        CardModel(content: .three_of_hearts),
-        
-        CardModel(content: .four_of_spades),
-        CardModel(content: .four_of_spades),
-        CardModel(content: .five_of_diamonds),
-        CardModel(content: .five_of_diamonds),
-        
-        CardModel(content: .six_of_clubs),
-        CardModel(content: .six_of_clubs),
-        CardModel(content: .ace_of_hearts),
-        CardModel(content: .ace_of_hearts),
-        
-        CardModel(content: .six_of_clubs),
-        CardModel(content: .six_of_clubs),
-        CardModel(content: .ace_of_hearts),
-        CardModel(content: .ace_of_hearts),
-    ].shuffled()
-    
+
     var body: some View {
         ZStack {
             // blue gradient background
@@ -89,17 +67,17 @@ struct GameScreenView: View {
                 ScrollView {
                     VStack(
                         alignment: .center,
-                        spacing: (1 - (CGFloat(cards.count) / 16)) * 150
+                        spacing: (1 - (CGFloat(store.state.cards.count) / 16)) * 150
                     ) {
                         // move count
-                        Text("Moves: 0")
+                        Text("Moves: \(store.state.moves)")
                             .foregroundColor(.white)
                             .font(.system(size: 30))
                             .bold()
                             .padding(.bottom, 15)
                         
                         // cards grid
-                        CardGridView(cards: cards)
+                        CardGridView(cards: store.state.cards)
                         
                         // give up button
                         Button(action: {
@@ -113,9 +91,9 @@ struct GameScreenView: View {
                         }, label:  {
                             HStack (alignment: .center) {
                                 Image(systemName: "heart.slash.fill")
-                                    .font(.system(size: 25))
+                                    .font(.system(size: 22))
                                 Text("Give Up")
-                                    .font(.system(size: 25))
+                                    .font(.system(size: 22))
                             }
                         })
                         .buttonStyle(RoundedRectangleButtonStyle())
@@ -136,7 +114,13 @@ struct GameScreenView: View {
 
 struct GameScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        GameScreenView()
-            .previewInterfaceOrientation(.portrait)
+        VStack {
+            ContentView().environmentObject(
+                ShinkeiSuijakuStore(
+                    initialState: ShinkeiSuijakuState(),
+                    initialReducer: shinkeiSuijakuReducer
+                )
+            )
+        }
     }
 }

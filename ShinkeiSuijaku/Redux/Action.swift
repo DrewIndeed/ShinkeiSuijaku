@@ -10,5 +10,6 @@ import Foundation
 enum Action {}
 
 enum ShinkeiSuijakuAction {
-  case startGame, newGame, leaderboard, howToPlay, logOut
+    case startGame, newGame, leaderboard, howToPlay, logOut
+    case flipCard(UUID)
 }

@@ -11,4 +11,7 @@ struct State {}
 
 struct ShinkeiSuijakuState {
     var gameState: GameState = .isTitle
+    var cards: [CardModel] = []
+    var selectedCards: [CardModel] = []
+    var moves: Int = 0
 }
