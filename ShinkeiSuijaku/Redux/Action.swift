@@ -12,4 +12,6 @@ enum Action {}
 enum ShinkeiSuijakuAction {
     case startGame, newGame, leaderboard, howToPlay, logOut, giveUp
     case flipCard(UUID)
+    case clearSelectedCards
+    case unFlipSelectedCards
 }
