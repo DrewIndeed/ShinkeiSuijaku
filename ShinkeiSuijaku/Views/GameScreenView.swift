@@ -10,7 +10,7 @@ import SwiftUI
 struct GameScreenView: View {
     // (Redux) store to use Redux mechanism
     @EnvironmentObject var store: ShinkeiSuijakuStore
-
+    
     var body: some View {
         ZStack {
             // blue gradient background
@@ -118,7 +118,8 @@ struct GameScreenView_Previews: PreviewProvider {
             ContentView().environmentObject(
                 ShinkeiSuijakuStore(
                     initialState: ShinkeiSuijakuState(),
-                    initialReducer: shinkeiSuijakuReducer
+                    initialReducer: shinkeiSuijakuReducer,
+                    initialMiddlewares: [gameLogic]
                 )
             )
         }

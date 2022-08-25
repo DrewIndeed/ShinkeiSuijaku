@@ -37,7 +37,8 @@ struct ContentView_Previews: PreviewProvider {
             ContentView().environmentObject(
                 ShinkeiSuijakuStore(
                     initialState: ShinkeiSuijakuState(),
-                    initialReducer: shinkeiSuijakuReducer
+                    initialReducer: shinkeiSuijakuReducer,
+                    initialMiddlewares: [gameLogic]
                 )
             )
         }

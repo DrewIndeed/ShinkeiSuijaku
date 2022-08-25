@@ -14,5 +14,5 @@ struct ShinkeiSuijakuState {
     var cards: [CardModel] = []
     var selectedCards: [CardModel] = []
     var moves: Int = 0
-    var difficultyLevel: DifficultyLevelModel = .hard
+    var difficultyLevel: DifficultyLevelModel = .easy
 }

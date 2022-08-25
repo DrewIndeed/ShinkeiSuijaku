@@ -14,7 +14,8 @@ struct ShinkeiSuijakuApp: App {
             ContentView().environmentObject(
                 ShinkeiSuijakuStore(
                     initialState: ShinkeiSuijakuState(),
-                    initialReducer: shinkeiSuijakuReducer
+                    initialReducer: shinkeiSuijakuReducer,
+                    initialMiddlewares: [gameLogic]
                 )
             )
         }

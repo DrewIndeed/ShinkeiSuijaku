@@ -24,9 +24,16 @@ let shinkeiSuijakuReducer: Reducer<ShinkeiSuijakuState, ShinkeiSuijakuAction> = 
         // init the default cards
         // copy state's card array
         var mutatingCards = mutatingState.cards
+        // keep track of previous card to re-randomize and avoid duplicate
+        var previousCardContent: CardContentModel = .back
         for _ in 0..<(mutatingState.difficultyLevel.numberOfCards / 2) {
             // get random element from card content model
-            let randomCardContent = CardContentModel.allCases.randomElement()!
+            var randomCardContent = CardContentModel.allCases.randomElement()!
+            // re-randomize
+            if (randomCardContent == previousCardContent) {
+                randomCardContent = CardContentModel.allCases.randomElement()!
+            }
+            previousCardContent = randomCardContent
             
             // add 2 same cards
             mutatingCards.append(CardModel(content: randomCardContent))

@@ -41,11 +41,17 @@ let gameLogic: Middleware<ShinkeiSuijakuState, ShinkeiSuijakuAction> = { state, 
             // if the cards match
             if selectedCards[0].content == selectedCards[1].content {
                 // send action
+                playSound("match")
                 return Just(.clearSelectedCards)
                     .eraseToAnyPublisher()
             } else {
                 // send action
+                playSound("unmatch")
                 return Just(.unFlipSelectedCards)
+                // need this line bc: If you get a match, you'll see the flipped cards stay flipped.
+                // Unfortunately, you'll also notice that if they don't match,
+                // they unflip so fast you don't get to see the second card
+                    .delay(for: 1, scheduler: DispatchQueue.main)
                     .eraseToAnyPublisher()
             }
         }
