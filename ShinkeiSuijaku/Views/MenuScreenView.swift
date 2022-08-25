@@ -95,7 +95,9 @@ struct MenuScreenView: View {
                             Button(action: {
                                 // button tapped action
                                 // dispatch action for New Game -> to Game
-                                store.dispatchToQueueActions(.newGame)
+                                withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
+                                    store.dispatchToQueueActions(.newGame)
+                                }
                                 playSound("tap")
                             }, label:  {
                                 Text("New Game")
@@ -161,6 +163,11 @@ struct MenuScreenView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea()
+        .onAppear {
+            if audioPlayer.currentTime == 0 {
+                playMusic("opening")
+            }
+        }
     }
 }
 

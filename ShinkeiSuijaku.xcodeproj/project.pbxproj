@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F12C3AD28B6819C004FBC8B /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3AC28B6819C004FBC8B /* PlaySound.swift */; };
+		8F12C3AD28B6819C004FBC8B /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3AC28B6819C004FBC8B /* AudioPlayer.swift */; };
+		8F12C3B428B72D47004FBC8B /* CardContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3B328B72D47004FBC8B /* CardContentModel.swift */; };
+		8F12C3B628B7334F004FBC8B /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3B528B7334F004FBC8B /* CardModel.swift */; };
+		8F12C3B928B7343F004FBC8B /* CardFrontContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3B828B7343F004FBC8B /* CardFrontContentView.swift */; };
+		8F12C3BB28B73486004FBC8B /* CardBackContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3BA28B73486004FBC8B /* CardBackContentView.swift */; };
+		8F12C3BD28B735D3004FBC8B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3BC28B735D3004FBC8B /* CardView.swift */; };
+		8F12C3BF28B75321004FBC8B /* CardGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3BE28B75321004FBC8B /* CardGridView.swift */; };
+		8F12C3C128B766F1004FBC8B /* GameScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3C028B766F1004FBC8B /* GameScreenView.swift */; };
 		8F165F4128AE352E00BC090E /* ShinkeiSuijakuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F165F4028AE352E00BC090E /* ShinkeiSuijakuApp.swift */; };
 		8F165F4528AE353000BC090E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F165F4428AE353000BC090E /* Assets.xcassets */; };
 		8F165F4828AE353000BC090E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F165F4728AE353000BC090E /* Preview Assets.xcassets */; };
@@ -33,7 +40,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8F12C3AC28B6819C004FBC8B /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
+		8F12C3AC28B6819C004FBC8B /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		8F12C3B328B72D47004FBC8B /* CardContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentModel.swift; sourceTree = "<group>"; };
+		8F12C3B528B7334F004FBC8B /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		8F12C3B828B7343F004FBC8B /* CardFrontContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontContentView.swift; sourceTree = "<group>"; };
+		8F12C3BA28B73486004FBC8B /* CardBackContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackContentView.swift; sourceTree = "<group>"; };
+		8F12C3BC28B735D3004FBC8B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		8F12C3BE28B75321004FBC8B /* CardGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGridView.swift; sourceTree = "<group>"; };
+		8F12C3C028B766F1004FBC8B /* GameScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenView.swift; sourceTree = "<group>"; };
 		8F165F3D28AE352E00BC090E /* ShinkeiSuijaku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShinkeiSuijaku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F165F4028AE352E00BC090E /* ShinkeiSuijakuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShinkeiSuijakuApp.swift; sourceTree = "<group>"; };
 		8F165F4428AE353000BC090E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,9 +87,20 @@
 		8F12C3AB28B6817F004FBC8B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8F12C3AC28B6819C004FBC8B /* PlaySound.swift */,
+				8F12C3AC28B6819C004FBC8B /* AudioPlayer.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8F12C3B728B7342E004FBC8B /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				8F12C3B828B7343F004FBC8B /* CardFrontContentView.swift */,
+				8F12C3BA28B73486004FBC8B /* CardBackContentView.swift */,
+				8F12C3BC28B735D3004FBC8B /* CardView.swift */,
+				8F12C3BE28B75321004FBC8B /* CardGridView.swift */,
+			);
+			path = Cards;
 			sourceTree = "<group>";
 		};
 		8F165F3428AE352D00BC090E = {
@@ -137,9 +162,11 @@
 		8F235CFB28B4D6BE00B00393 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8F12C3B728B7342E004FBC8B /* Cards */,
 				8F235CFE28B4D70300B00393 /* TitleScreenView.swift */,
 				8F235D0E28B605A300B00393 /* MenuScreenView.swift */,
 				8F235D1428B6143100B00393 /* HowToPlayScreenView.swift */,
+				8F12C3C028B766F1004FBC8B /* GameScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				8F235D0328B4D74600B00393 /* GameStateModel.swift */,
+				8F12C3B328B72D47004FBC8B /* CardContentModel.swift */,
+				8F12C3B528B7334F004FBC8B /* CardModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,15 +280,22 @@
 			files = (
 				8F235D0628B4D79000B00393 /* Store.swift in Sources */,
 				8F235D1328B60E7400B00393 /* Action.swift in Sources */,
+				8F12C3C128B766F1004FBC8B /* GameScreenView.swift in Sources */,
 				8F165F4D28AE353000BC090E /* ShinkeiSuijaku.xcdatamodeld in Sources */,
+				8F12C3B928B7343F004FBC8B /* CardFrontContentView.swift in Sources */,
 				8F235D0D28B6017E00B00393 /* TextFields.swift in Sources */,
 				8F235D1128B60E5D00B00393 /* Reducer.swift in Sources */,
-				8F12C3AD28B6819C004FBC8B /* PlaySound.swift in Sources */,
+				8F12C3B628B7334F004FBC8B /* CardModel.swift in Sources */,
+				8F12C3BD28B735D3004FBC8B /* CardView.swift in Sources */,
+				8F12C3B428B72D47004FBC8B /* CardContentModel.swift in Sources */,
+				8F12C3AD28B6819C004FBC8B /* AudioPlayer.swift in Sources */,
 				8F235D0F28B605A300B00393 /* MenuScreenView.swift in Sources */,
 				8F235D0828B4D9EF00B00393 /* ContentView.swift in Sources */,
 				8F235D1528B6143100B00393 /* HowToPlayScreenView.swift in Sources */,
 				8F165F4128AE352E00BC090E /* ShinkeiSuijakuApp.swift in Sources */,
+				8F12C3BB28B73486004FBC8B /* CardBackContentView.swift in Sources */,
 				8F235D0128B4D71E00B00393 /* State.swift in Sources */,
+				8F12C3BF28B75321004FBC8B /* CardGridView.swift in Sources */,
 				8F235D0B28B6013D00B00393 /* Buttons.swift in Sources */,
 				8F235CFF28B4D70300B00393 /* TitleScreenView.swift in Sources */,
 				8F235D0428B4D74600B00393 /* GameStateModel.swift in Sources */,

@@ -8,6 +8,7 @@
 import Foundation
 import AVFoundation
 
+// Function to play sound effects
 func playSound(_ soundFileName: String) {
     var filePath: String?
     filePath = Bundle.main.path(forResource: soundFileName, ofType: "mp3")
@@ -18,8 +19,8 @@ func playSound(_ soundFileName: String) {
     AudioServicesPlaySystemSound(soundID)
 }
 
+// Function to play background music
 var audioPlayer = AVAudioPlayer()
-
 func playMusic(_ soundName: String)
 {
     let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: soundName, ofType:"mp3")!)

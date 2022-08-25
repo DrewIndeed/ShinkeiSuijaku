@@ -23,7 +23,7 @@ struct ContentView: View {
            case .isLeaderBoard:
                Text("In Leaderboard")
            case .isGame:
-               Text("In Game")
+               GameScreenView()
            case .isWon:
                Text("Won Game")
            case .isLost:

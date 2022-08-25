@@ -1,16 +1,37 @@
 //
-//  HowToPlayScreenView.swift
+//  GameScreenView.swift
 //  ShinkeiSuijaku
 //
-//  Created by Andrew Le Nguyen on 24/08/2022.
+//  Created by Andrew Le Nguyen on 25/08/2022.
 //
 
 import SwiftUI
-import AVFoundation
 
-struct HowToPlayScreenView: View {
+struct GameScreenView: View {
     // (Redux) store to use Redux mechanism
     @EnvironmentObject var store: ShinkeiSuijakuStore
+    
+    let cards = [
+        CardModel(content: .two_of_clubs),
+        CardModel(content: .two_of_clubs),
+        CardModel(content: .three_of_hearts),
+        CardModel(content: .three_of_hearts),
+        
+        CardModel(content: .four_of_spades),
+        CardModel(content: .four_of_spades),
+        CardModel(content: .five_of_diamonds),
+        CardModel(content: .five_of_diamonds),
+        
+        CardModel(content: .six_of_clubs),
+        CardModel(content: .six_of_clubs),
+        CardModel(content: .ace_of_hearts),
+        CardModel(content: .ace_of_hearts),
+        
+        CardModel(content: .six_of_clubs),
+        CardModel(content: .six_of_clubs),
+        CardModel(content: .ace_of_hearts),
+        CardModel(content: .ace_of_hearts),
+    ].shuffled()
     
     var body: some View {
         ZStack {
@@ -66,69 +87,56 @@ struct HowToPlayScreenView: View {
                 let size = proxy.size
                 
                 ScrollView {
-                    VStack(alignment: .center, spacing: 0) {
-                        Text("How To Play")
+                    VStack(
+                        alignment: .center,
+                        spacing: (1 - (CGFloat(cards.count) / 16)) * 150
+                    ) {
+                        // move count
+                        Text("Moves: 0")
                             .foregroundColor(.white)
-                            .font(.system(size: 50))
+                            .font(.system(size: 30))
                             .bold()
-                            .multilineTextAlignment(.leading)
-                        
-                        Text("Know the rules before playing any game!")
-                            .foregroundColor(.white)
-                            .font(.system(size: 18))
-                            .multilineTextAlignment(.leading)
-                            .padding(.top, 10)
-                            .padding(.bottom, 20)
-                        
-                        Divider()
-                            .frame(width: 300, height: 2)
-                            .overlay(.yellow)
                             .padding(.bottom, 15)
                         
-                        // rules text content
-                        Text("Players take turns, turning any two cards picture-side-up. Each card flip counts as one move.\n\nA Match: Players make a match if the two cards turned picture-side-up are identical. Those two cards then remains faced-up.\n\nA Miss: Player miss if the two cards turned over are not identical. When player miss, the two cards are turned picture-side-down again, in the same place.\n\nThe game continues until all cards have been matched. Until then, players can choose to give up anytime and receive no points counted.\n\nPoints calculation: number of moves in one game times the number of card for each level. Easy, Medium and Hard have 8, 12, 16 cards, respectively. Giving up receives 0 points.")
-                            .foregroundColor(.white)
-                            .font(.system(size: 20))
-                            .multilineTextAlignment(.center)
-                            .padding(.top, 10)
-                            .padding(.bottom, 20)
-                            .frame(maxWidth: .infinity)
+                        // cards grid
+                        CardGridView(cards: cards)
                         
-                        Divider()
-                            .frame(width: 200, height: 2)
-                            .overlay(.yellow)
-                            .padding(.top, 10)
-                            .padding(.bottom, 20)
-                        
-                        // Back To Menu button
+                        // give up button
                         Button(action: {
                             // button tapped action
-                            // dispatch action for Back to Menu -> to Menu
+                            // dispatch action for Give Up -> to Give Up
                             withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
                                 store.dispatchToQueueActions(.startGame)
                             }
                             playSound("tap")
+                            playMusic("opening")
                         }, label:  {
-                            Text("Back To Menu")
-                                .bold()
-                                .frame(width: 300)
+                            HStack (alignment: .center) {
+                                Image(systemName: "heart.slash.fill")
+                                    .font(.system(size: 25))
+                                Text("Give Up")
+                                    .font(.system(size: 25))
+                            }
                         })
-                        .buttonStyle(RoundedRectangleSecondaryButtonStyle())
+                        .buttonStyle(RoundedRectangleButtonStyle())
+                        .padding(.top, 15)
                     }
                     .padding(.vertical, size.height * 0.08)
                     .padding(.horizontal, size.width * 0.05)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea()
+        .onAppear {
+            playMusic("ingame")
+        }
     }
 }
 
-struct HowToPlayScreenView_Previews: PreviewProvider {
+struct GameScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        HowToPlayScreenView()
+        GameScreenView()
             .previewInterfaceOrientation(.portrait)
     }
 }
