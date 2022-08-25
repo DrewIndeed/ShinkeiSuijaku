@@ -18,10 +18,10 @@ struct ContentView: View {
                TitleScreenView()
            case .isMenu:
                MenuScreenView()
-           case .isLeaderBoard:
-               Text("In Leaderboard")
            case .isHowToPlay:
                HowToPlayScreenView()
+           case .isLeaderBoard:
+               Text("In Leaderboard")
            case .isGame:
                Text("In Game")
            case .isWon:

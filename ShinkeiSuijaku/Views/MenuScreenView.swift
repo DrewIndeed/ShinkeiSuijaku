@@ -73,13 +73,13 @@ struct MenuScreenView: View {
                         
                         // player nickname
                         Text("\(playerNickname.capitalized)")
-                            .font(.system(size: 30))
+                            .font(.system(size: 28))
                             .foregroundColor(.white)
                             .bold()
                             .multilineTextAlignment(.center)
-                            .padding(.horizontal, 15)
+                            .padding(.horizontal, 10)
                             .padding(.top, 20)
-                            .frame(width: .infinity)
+                            .frame(width: size.width)
                         
                         // "is locked in" text
                         Text("🔥 is locked in 🔥")
@@ -87,7 +87,7 @@ struct MenuScreenView: View {
                             .foregroundColor(.white)
                             .bold()
                             .multilineTextAlignment(.center)
-                            .frame(width: .infinity)
+                            .frame(width: size.width)
                         
                         // buttons
                         VStack (spacing: 20) {
@@ -96,6 +96,7 @@ struct MenuScreenView: View {
                                 // button tapped action
                                 // dispatch action for New Game -> to Game
                                 store.dispatchToQueueActions(.newGame)
+                                playSound("tap")
                             }, label:  {
                                 Text("New Game")
                                     .bold()
@@ -109,6 +110,7 @@ struct MenuScreenView: View {
                                 // button tapped action
                                 // dispatch action for Leaderboard -> to leaderboard
                                 store.dispatchToQueueActions(.leaderboard)
+                                playSound("tap")
                             }, label:  {
                                 Text("Leaderboard")
                                     .bold()
@@ -125,6 +127,7 @@ struct MenuScreenView: View {
                                 withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
                                     store.dispatchToQueueActions(.howToPlay)
                                 }
+                                playSound("tap")
                             }, label:  {
                                 Text("How To Play")
                                     .bold()
@@ -140,6 +143,7 @@ struct MenuScreenView: View {
                                 withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
                                     store.dispatchToQueueActions(.logOut)
                                 }
+                                playSound("tap")
                             }, label:  {
                                 Text("Log Out")
                                     .bold()
@@ -150,7 +154,7 @@ struct MenuScreenView: View {
                         }
                         .padding(.top, 30)
                     }
-                    .padding(.vertical, size.height * 0.15)
+                    .padding(.vertical, size.height * 0.1)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
@@ -163,6 +167,5 @@ struct MenuScreenView: View {
 struct MenuScreenView_Previews: PreviewProvider {
     static var previews: some View {
         MenuScreenView()
-            .previewInterfaceOrientation(.portrait)
     }
 }

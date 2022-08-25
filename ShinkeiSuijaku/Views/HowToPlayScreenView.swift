@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct HowToPlayScreenView: View {
     // (Redux) store to use Redux mechanism
@@ -106,6 +107,7 @@ struct HowToPlayScreenView: View {
                             withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
                                 store.dispatchToQueueActions(.startGame)
                             }
+                            playSound("tap")
                         }, label:  {
                             Text("Back To Menu")
                                 .bold()

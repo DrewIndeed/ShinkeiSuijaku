@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct TitleScreenView: View {
     // (Redux) store to use Redux mechanism
     @EnvironmentObject var store: ShinkeiSuijakuStore
     
     @SwiftUI.State private var nameInput: String = ""
-    
     var body: some View {
         VStack {
             ZStack {
@@ -68,7 +68,7 @@ struct TitleScreenView: View {
                     let size = proxy.size
                     
                     ScrollView(showsIndicators: false) {
-                        VStack(alignment: .center, spacing: 30) {
+                        VStack(alignment: .center, spacing: 25) {
                             // game icon image
                             Image("MenuGameIcon")
                             
@@ -83,16 +83,17 @@ struct TitleScreenView: View {
                                 .font(.system(size: 20))
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.center)
-                                .frame(width: 340)
+                                .frame(width: 320)
                             
                             Spacer()
                             
                             // text field to input name
                             VStack(alignment: .leading) {
                                 HStack {
-                                    TextField("Your lovely nickname", text: $nameInput)
-                                        .font(.system(size: 20))
-                                        .frame(width: 340)
+                                    TextField("Enter your lovely nickname", text: $nameInput)
+                                        .foregroundColor(.gray)
+                                        .font(.system(size: 16))
+                                        .frame(width: 320)
                                 }
                                 .textFieldStyle(OvalTextFieldStyle())
                             }
@@ -104,6 +105,8 @@ struct TitleScreenView: View {
                                 withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
                                     store.dispatchToQueueActions(.startGame)
                                 }
+                                
+                                playSound("tap")
                             }, label:  {
                                 Text("Start Game")
                                     .bold()
@@ -111,13 +114,18 @@ struct TitleScreenView: View {
                             })
                             .buttonStyle(RoundedRectangleButtonStyle())
                         }
-                        .padding(.vertical, size.height * 0.15)
+                        .padding(.vertical, size.height * 0.1)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea()
+            .onAppear {
+                if audioPlayer.currentTime == 0 {
+                    playMusic("opening")
+                }
+            }
         }
     }
 }
@@ -125,6 +133,5 @@ struct TitleScreenView: View {
 struct TitleScreenView_Previews: PreviewProvider {
     static var previews: some View {
         TitleScreenView()
-            .previewInterfaceOrientation(.portrait)
     }
 }
