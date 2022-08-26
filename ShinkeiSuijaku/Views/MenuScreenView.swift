@@ -190,7 +190,7 @@ struct MenuScreenView: View {
     
     @ViewBuilder
     func DifficultyLevelButton(difficultyLevel: DifficultyLevelModel, role: ButtonRole?) -> some View {
-        Button(difficultyLevel.rawValue, role: role, action: {
+        Button(difficultyLevel.rawValue.capitalized, role: role, action: {
             // set difficulty level
             store.dispatchToQueueActions(.setDifficultyLevel(difficultyLevel))
             

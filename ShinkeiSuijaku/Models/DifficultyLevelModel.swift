@@ -12,9 +12,9 @@ enum DifficultyLevelModel: String, Identifiable, CaseIterable, Codable {
     var id: String {rawValue}
     
     // difficulty levels
-    case easy = "Easy"
-    case medium = "Medium"
-    case hard = "Hard"
+    case easy = "easy"
+    case medium = "medium"
+    case hard = "hard"
     
     // colors of level buttons
     var numberOfCards: Int {

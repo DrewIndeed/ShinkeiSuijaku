@@ -7,6 +7,12 @@
 
 import Foundation
 
-enum GameStateModel {
-  case isTitle, isMenu, isHowToPlay, isLeaderBoard, isGame, isWon, isLost
+enum GameStateModel: String, Codable {
+    case isTitle = "isTitle"
+    case isMenu = "isMenu"
+    case isHowToPlay = "isHowToPlay"
+    case isLeaderBoard = "isLeaderBoard"
+    case isGame = "isGame"
+    case isWon = "isWon"
+    case isLost = "isLost"
 }

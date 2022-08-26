@@ -11,7 +11,7 @@ struct CardFrontContentView: View {
     var content: CardContentModel
     
     var body: some View {
-        content.image
+        Image(content.image)
             .resizable()
             .aspectRatio(contentMode: .fit)
     }

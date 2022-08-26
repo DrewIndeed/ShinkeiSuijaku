@@ -9,10 +9,10 @@ import Foundation
 
 struct State {}
 
-struct ShinkeiSuijakuState {
-    var gameState: GameStateModel = .isTitle
+struct ShinkeiSuijakuState: Codable {
     var cards: [CardModel] = []
     var selectedCards: [CardModel] = []
     var moves: Int = 0
+    var gameState: GameStateModel = .isTitle
     var difficultyLevel: DifficultyLevelModel = .easy
 }

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-enum CardContentModel: String, CaseIterable {
-    var image: Image {Image(rawValue)}
+enum CardContentModel: String, CaseIterable, Codable {
+    var image: String {rawValue}
     
     case two_of_clubs = "2_of_clubs"
     case two_of_diamonds = "2_of_diamonds"

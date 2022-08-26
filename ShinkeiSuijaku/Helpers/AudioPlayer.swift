@@ -28,7 +28,9 @@ func playMusic(_ soundName: String)
         audioPlayer = try AVAudioPlayer(contentsOf: sound as URL)
         audioPlayer.numberOfLoops = -1
         audioPlayer.prepareToPlay()
-        audioPlayer.play()
+        
+        // ADJUST TO play() in final build
+        audioPlayer.stop()
     } catch {
         print("Error getting the audio file")
     }
