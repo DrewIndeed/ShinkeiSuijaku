@@ -18,6 +18,8 @@ let shinkeiSuijakuReducer: Reducer<ShinkeiSuijakuState, ShinkeiSuijakuAction> = 
     switch action {
     case .startGame:
         mutatingState.gameState = .isMenu
+    case .setDifficultyLevel(let level):
+        mutatingState.difficultyLevel = level
     case .newGame:
         mutatingState.gameState = .isGame
         
@@ -108,6 +110,9 @@ let shinkeiSuijakuReducer: Reducer<ShinkeiSuijakuState, ShinkeiSuijakuAction> = 
     case .clearSelectedCards:
         // empty selected cards array
         mutatingState.selectedCards = []
+    case .clearInitCards:
+        // empty init cards array
+        mutatingState.cards = []
     }
     
     // return newly updated state

@@ -191,6 +191,9 @@ struct MenuScreenView: View {
     @ViewBuilder
     func DifficultyLevelButton(difficultyLevel: DifficultyLevelModel, role: ButtonRole?) -> some View {
         Button(difficultyLevel.rawValue, role: role, action: {
+            // set difficulty level
+            store.dispatchToQueueActions(.setDifficultyLevel(difficultyLevel))
+            
             // button tapped action
             // dispatch action for New Game -> to Game
             withAnimation(.easeOut(duration: 0.4).delay(0.2)) {

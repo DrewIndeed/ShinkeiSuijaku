@@ -84,6 +84,10 @@ struct GameScreenView: View {
                             // button tapped action
                             // dispatch action for Give Up -> to Give Up
                             withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
+                                // reset cards state
+                                store.dispatchToQueueActions(.clearInitCards)
+                                store.dispatchToQueueActions(.clearSelectedCards)
+                                // redirect
                                 store.dispatchToQueueActions(.startGame)
                             }
                             playSound("tap")
