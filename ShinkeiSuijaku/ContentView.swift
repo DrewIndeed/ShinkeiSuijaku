@@ -25,9 +25,9 @@ struct ContentView: View {
         case .isGame:
             GameScreenView()
         case .isWon:
-            Text("Won Game")
+            WonScreenView()
         case .isLost:
-            Text("Lost Game")
+            LostScreenView()
         }
     }
 }

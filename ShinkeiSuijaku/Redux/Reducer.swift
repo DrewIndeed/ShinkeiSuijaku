@@ -20,6 +20,8 @@ let shinkeiSuijakuReducer: Reducer<ShinkeiSuijakuState, ShinkeiSuijakuAction> = 
         mutatingState.gameState = .isMenu
     case .setDifficultyLevel(let level):
         mutatingState.difficultyLevel = level
+    case .wonGame:
+        mutatingState.gameState = .isWon
     case .newGame:
         mutatingState.gameState = .isGame
         
@@ -48,8 +50,7 @@ let shinkeiSuijakuReducer: Reducer<ShinkeiSuijakuState, ShinkeiSuijakuAction> = 
         mutatingState.selectedCards = []
         mutatingState.moves = 0
     case .giveUp:
-        // LATER ADJUST TO .giveUp
-        mutatingState.gameState = .isMenu
+        mutatingState.gameState = .isLost
     case .leaderboard:
         mutatingState.gameState = .isLeaderBoard
     case .howToPlay:

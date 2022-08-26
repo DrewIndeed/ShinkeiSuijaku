@@ -88,7 +88,7 @@ struct GameScreenView: View {
                                 store.dispatchToQueueActions(.clearInitCards)
                                 store.dispatchToQueueActions(.clearSelectedCards)
                                 // redirect
-                                store.dispatchToQueueActions(.startGame)
+                                store.dispatchToQueueActions(.giveUp)
                             }
                             playSound("tap")
                             playMusic("opening")
