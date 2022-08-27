@@ -6,13 +6,36 @@
 //
 
 import SwiftUI
-import AVFoundation
 
 struct TitleScreenView: View {
     // (Redux) store to use Redux mechanism
     @EnvironmentObject var store: ShinkeiSuijakuStore
     
+    // context to interract with Core Data
+    @Environment(\.managedObjectContext) var moc
+    
+    // players list
+    @FetchRequest(entity: Player.entity(), sortDescriptors: []) var players: FetchedResults<Player>
+    
+    // text field - player name input
     @SwiftUI.State private var nameInput: String = ""
+    
+    // alert showing flag
+    @SwiftUI.State var showLevelAlert: Bool = false
+    
+    // duplicate checking flag
+    @SwiftUI.State var hasDuplicate: Bool = false
+    
+    /* DEVELOPMENT ONLY */
+    //    func removePlayers(at offsets: IndexSet) {
+    //        for index in offsets {
+    //            let player = players[index]
+    //            self.moc.delete(player)
+    //        }
+    //
+    //        // save context
+    //        try? self.moc.save()
+    //    }
     
     var body: some View {
         ZStack {
@@ -87,10 +110,24 @@ struct TitleScreenView: View {
                         
                         Spacer()
                         
+                        /* DEVELOPMENT ONLY */
+                        //                        List {
+                        //                            ForEach(players) { player in
+                        //                                HStack {
+                        //                                    Text(player.name ?? "Unknown")
+                        //                                    Text("- Login status:")
+                        //                                    Text(String(player.isPlaying))
+                        //                                }
+                        //                            }
+                        //                            .onDelete(perform: removePlayers)
+                        //                        }
+                        //                        .frame(height: 500)
+                        
                         // text field to input name
                         VStack(alignment: .leading) {
                             HStack {
                                 TextField("Enter your lovely nickname", text: $nameInput)
+                                    .disableAutocorrection(true)
                                     .font(.system(size: 16))
                                     .frame(width: 320)
                             }
@@ -99,10 +136,14 @@ struct TitleScreenView: View {
                         
                         // Start Game button
                         Button(action: {
-                            // button tapped action
-                            // dispatch action for Start Game -> to Menu
-                            withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
-                                store.dispatchToQueueActions(.startGame)
+                            // if there is inpuy content, show alert
+                            if (nameInput.trimmingAllSpaces() != "") {
+                                // call duplicate checking function
+                                hasDuplicate = checkForDuplicates(
+                                    targetPlayerName: nameInput.trimmingAllSpaces(),
+                                    players: players
+                                )
+                                showLevelAlert.toggle()
                             }
                             
                             playSound("tap")
@@ -121,6 +162,56 @@ struct TitleScreenView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea()
+        .alert("Are you ready?", isPresented: $showLevelAlert) {
+            Button("It's On!", role: .destructive, action: {
+                // if having duplicates, jump into game
+                // if not, create new player and jump into game
+                if (!hasDuplicate) {
+                    let player = Player(context: moc)
+                    player.name = nameInput.trimmingAllSpaces()
+                    player.id = UUID()
+                    player.personalGameState = encodeToJsonString(gameStateObject: ShinkeiSuijakuState())
+                    // because there is no player.isPlaying is set here,
+                    // when exit app, every player.isPlaying will be false
+                    
+                    // save context
+                    try? self.moc.save()
+                }
+                
+                // reset name input content
+                updateStatus(targetPlayerName: nameInput.trimmingAllSpaces(), players: players)
+                nameInput = ""
+                
+                // button tapped action
+                // dispatch action for Start Game -> to Menu
+                withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
+                    store.dispatchToQueueActions(.startGame)
+                }
+                
+                // button debounce
+                if (showLevelAlert == true) {
+                    showLevelAlert.toggle()
+                    if (showLevelAlert == true) {
+                        showLevelAlert.toggle()
+                    }
+                }
+            })
+            Button("Cancel", role: .cancel, action: {
+                // button debounce
+                if (showLevelAlert == true) {
+                    showLevelAlert.toggle()
+                    if (showLevelAlert == true) {
+                        showLevelAlert.toggle()
+                    }
+                }
+            })
+        } message: {
+            if (hasDuplicate) {
+                Text("Welcome back, \(nameInput)🔥")
+            } else {
+                Text("Welcome, \(nameInput)🔥")
+            }
+        }
         .onAppear {
             if audioPlayer.currentTime == 0 {
                 playMusic("opening")

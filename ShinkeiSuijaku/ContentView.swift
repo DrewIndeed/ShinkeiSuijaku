@@ -32,15 +32,16 @@ struct ContentView: View {
     }
 }
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
+    static var previews: some View {        
         VStack {
-            ContentView().environmentObject(
-                ShinkeiSuijakuStore(
-                    initialState: ShinkeiSuijakuState(),
-                    initialReducer: shinkeiSuijakuReducer,
-                    initialMiddlewares: [gameLogic]
+            ContentView()
+                .environmentObject(
+                    ShinkeiSuijakuStore(
+                        initialState: ShinkeiSuijakuState(),
+                        initialReducer: shinkeiSuijakuReducer,
+                        initialMiddlewares: [gameLogic]
+                    )
                 )
-            )
         }
     }
 }

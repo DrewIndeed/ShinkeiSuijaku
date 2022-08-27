@@ -9,15 +9,23 @@ import SwiftUI
 
 @main
 struct ShinkeiSuijakuApp: App {
+    // init Core Data manager
+    @StateObject private var coreDataManager: CoreDataManager = CoreDataManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(
-                ShinkeiSuijakuStore(
-                    initialState: ShinkeiSuijakuState(),
-                    initialReducer: shinkeiSuijakuReducer,
-                    initialMiddlewares: [gameLogic]
+            ContentView()
+                .environment(
+                    \.managedObjectContext,
+                     coreDataManager.persistentContainer.viewContext
                 )
-            )
+                .environmentObject(
+                    ShinkeiSuijakuStore(
+                        initialState: ShinkeiSuijakuState(),
+                        initialReducer: shinkeiSuijakuReducer,
+                        initialMiddlewares: [gameLogic]
+                    )
+                )
         }
     }
 }
