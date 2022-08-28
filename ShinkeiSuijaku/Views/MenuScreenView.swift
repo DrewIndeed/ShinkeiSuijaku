@@ -11,8 +11,16 @@ struct MenuScreenView: View {
     // (Redux) store to use Redux mechanism
     @EnvironmentObject var store: ShinkeiSuijakuStore
     
-    // dummies
-    @SwiftUI.State var playerNickname: String = "moscow elite thunderbolt"
+    // context to interract with Core Data
+    @Environment(\.managedObjectContext) var moc
+    
+    // current playing player
+    @FetchRequest(
+        entity: Player.entity(),
+        sortDescriptors: [],
+        predicate: NSPredicate(format: "isPlaying = true", true)
+    ) var currentPlayers: FetchedResults<Player>
+    
     
     // alert showing flag
     @SwiftUI.State var showLevelAlert: Bool = false
@@ -76,7 +84,7 @@ struct MenuScreenView: View {
                         Image("MenuGameIcon")
                         
                         // player nickname
-                        Text("\(playerNickname.capitalized)")
+                        Text(currentPlayers.count != 0 ? currentPlayers[0].name! : "")
                             .font(.system(size: 28))
                             .foregroundColor(.white)
                             .bold()
@@ -86,7 +94,7 @@ struct MenuScreenView: View {
                             .frame(width: size.width)
                         
                         // "is locked in" text
-                        Text("🔥 is locked in 🔥")
+                        Text(currentPlayers.count != 0 ? "🔥 is locked in 🔥" : "")
                             .font(.system(size: 25))
                             .foregroundColor(.white)
                             .bold()
@@ -142,10 +150,19 @@ struct MenuScreenView: View {
                             
                             // Log Out button
                             Button(action: {
-                                // button tapped action
-                                // dispatch action for log out -> to title
-                                withAnimation(.easeOut(duration: 0.4).delay(0.2)) {
-                                    store.dispatchToQueueActions(.logOut)
+                                // if there is a current player, reset isPlaying status of that player
+                                if (currentPlayers.count != 0) {
+                                    for player in currentPlayers {
+                                        if (player.isPlaying) {
+                                            player.isPlaying = false
+                                        }
+                                    }
+                                    
+                                    // button tapped action
+                                    // dispatch action for log out -> to title
+                                    withAnimation(.easeOut(duration: 0.4)) {
+                                        store.dispatchToQueueActions(.logOut)
+                                    }
                                 }
                                 playSound("tap")
                             }, label:  {

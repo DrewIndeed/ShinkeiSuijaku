@@ -27,15 +27,15 @@ struct TitleScreenView: View {
     @SwiftUI.State var hasDuplicate: Bool = false
     
     /* DEVELOPMENT ONLY */
-    //    func removePlayers(at offsets: IndexSet) {
-    //        for index in offsets {
-    //            let player = players[index]
-    //            self.moc.delete(player)
-    //        }
-    //
-    //        // save context
-    //        try? self.moc.save()
-    //    }
+    func removePlayers(at offsets: IndexSet) {
+        for index in offsets {
+            let player = players[index]
+            self.moc.delete(player)
+        }
+        
+        // save context
+        try? self.moc.save()
+    }
     
     var body: some View {
         ZStack {
@@ -111,17 +111,17 @@ struct TitleScreenView: View {
                         Spacer()
                         
                         /* DEVELOPMENT ONLY */
-                        //                        List {
-                        //                            ForEach(players) { player in
-                        //                                HStack {
-                        //                                    Text(player.name ?? "Unknown")
-                        //                                    Text("- Login status:")
-                        //                                    Text(String(player.isPlaying))
-                        //                                }
-                        //                            }
-                        //                            .onDelete(perform: removePlayers)
-                        //                        }
-                        //                        .frame(height: 500)
+//                        List {
+//                            ForEach(players) { player in
+//                                HStack {
+//                                    Text(player.name ?? "Unknown")
+//                                    Text("- Login status:")
+//                                    Text(String(player.isPlaying))
+//                                }
+//                            }
+//                            .onDelete(perform: removePlayers)
+//                        }
+//                        .frame(height: 300)
                         
                         // text field to input name
                         VStack(alignment: .leading) {

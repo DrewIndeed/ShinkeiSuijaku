@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F12C3AD28B6819C004FBC8B /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3AC28B6819C004FBC8B /* AudioPlayer.swift */; };
+		8F12C3AD28B6819C004FBC8B /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3AC28B6819C004FBC8B /* AudioHandler.swift */; };
 		8F12C3B428B72D47004FBC8B /* CardContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3B328B72D47004FBC8B /* CardContentModel.swift */; };
 		8F12C3B628B7334F004FBC8B /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3B528B7334F004FBC8B /* CardModel.swift */; };
 		8F12C3B928B7343F004FBC8B /* CardFrontContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12C3B828B7343F004FBC8B /* CardFrontContentView.swift */; };
@@ -49,7 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8F12C3AC28B6819C004FBC8B /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		8F12C3AC28B6819C004FBC8B /* AudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHandler.swift; sourceTree = "<group>"; };
 		8F12C3B328B72D47004FBC8B /* CardContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentModel.swift; sourceTree = "<group>"; };
 		8F12C3B528B7334F004FBC8B /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		8F12C3B828B7343F004FBC8B /* CardFrontContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontContentView.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		8F12C3AB28B6817F004FBC8B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8F12C3AC28B6819C004FBC8B /* AudioPlayer.swift */,
+				8F12C3AC28B6819C004FBC8B /* AudioHandler.swift */,
 				8F12C3CC28B8A9F2004FBC8B /* ShinkeiSuijakuStateJsonHandler.swift */,
 				8F1D0DDF28B9BEAA00D94F99 /* PlayerDataHandler.swift */,
 			);
@@ -328,7 +328,7 @@
 				8F12C3B628B7334F004FBC8B /* CardModel.swift in Sources */,
 				8F12C3BD28B735D3004FBC8B /* CardView.swift in Sources */,
 				8F12C3B428B72D47004FBC8B /* CardContentModel.swift in Sources */,
-				8F12C3AD28B6819C004FBC8B /* AudioPlayer.swift in Sources */,
+				8F12C3AD28B6819C004FBC8B /* AudioHandler.swift in Sources */,
 				8F12C3C328B7BBF0004FBC8B /* DifficultyLevelModel.swift in Sources */,
 				8F235D0F28B605A300B00393 /* MenuScreenView.swift in Sources */,
 				8F235D0828B4D9EF00B00393 /* ContentView.swift in Sources */,
