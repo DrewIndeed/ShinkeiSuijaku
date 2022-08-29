@@ -46,6 +46,7 @@
 		8F235D1128B60E5D00B00393 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235D1028B60E5D00B00393 /* Reducer.swift */; };
 		8F235D1328B60E7400B00393 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235D1228B60E7400B00393 /* Action.swift */; };
 		8F235D1528B6143100B00393 /* HowToPlayScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F235D1428B6143100B00393 /* HowToPlayScreenView.swift */; };
+		8FA0E2F428BD0F4A00FEDE8D /* document.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8FA0E2F328BD0F4A00FEDE8D /* document.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		8F235D1028B60E5D00B00393 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		8F235D1228B60E7400B00393 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		8F235D1428B6143100B00393 /* HowToPlayScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayScreenView.swift; sourceTree = "<group>"; };
+		8FA0E2F328BD0F4A00FEDE8D /* document.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = document.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		8F165F3F28AE352E00BC090E /* ShinkeiSuijaku */ = {
 			isa = PBXGroup;
 			children = (
+				8FA0E2F328BD0F4A00FEDE8D /* document.pdf */,
 				8F12C3CE28B8AF35004FBC8B /* Managers */,
 				8F12C3AB28B6817F004FBC8B /* Helpers */,
 				8F235D0928B6010100B00393 /* CustomStyles */,
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F235CFA28B2718200B00393 /* win.mp3 in Resources */,
+				8FA0E2F428BD0F4A00FEDE8D /* document.pdf in Resources */,
 				8F235CF728B2718200B00393 /* match.mp3 in Resources */,
 				8F235CF928B2718200B00393 /* opening.mp3 in Resources */,
 				8F12C3C728B7CCFC004FBC8B /* unmatch.mp3 in Resources */,
