@@ -138,18 +138,18 @@ struct MenuScreenView: View {
                             .transition(.move(edge: .leading))
                             
                             // Leaderboard button
-                            Button(action: {
-                                // button tapped action
-                                // dispatch action for Leaderboard -> to leaderboard
-                                store.dispatchToQueueActions(.leaderboard)
-                                playSound("tap")
-                            }, label:  {
-                                Text("Leaderboard")
-                                    .bold()
-                                    .frame(width: 180)
-                            })
-                            .buttonStyle(RoundedRectangleButtonStyle())
-                            .transition(.move(edge: .leading))
+//                            Button(action: {
+//                                // button tapped action
+//                                // dispatch action for Leaderboard -> to leaderboard
+//                                store.dispatchToQueueActions(.leaderboard)
+//                                playSound("tap")
+//                            }, label:  {
+//                                Text("Leaderboard")
+//                                    .bold()
+//                                    .frame(width: 180)
+//                            })
+//                            .buttonStyle(RoundedRectangleButtonStyle())
+//                            .transition(.move(edge: .leading))
                             
                             
                             // How To Play button
